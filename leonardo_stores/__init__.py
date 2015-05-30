@@ -10,10 +10,11 @@ class Default(object):
     apps = [
         'leonardo_stores',
         'stores',
+        'django.contrib.gis',
     ]
 
     plugins = [
-        ('eshop_stores.apps.stores', _('Stores'), ),
+        ('leonardo_stores.apps.stores', _('Stores'), ),
     ]
 
     config = {
@@ -21,6 +22,22 @@ class Default(object):
         'STORES_GEODETIC_SRID': (4326, _('Paypal API Password')),
         'STORES_MAX_SEARCH_DISTANCE': (None, _('This filters stores in queries by distance. Units can be set using distance object')),
     }
+
+    css_files = [
+        'stores/css/stores.css',
+    ]
+
+    js_files = [
+        'stores/js/stores.js',
+    ]
+
+    absolute_url_overrides = {
+        'stores.store': 'leonardo_stores.overrides.store',
+    }
+
+    navigation_extensions = [
+        'leonardo_stores.navigations.all'
+    ]
 
 
 class Config(AppConfig, Default):
