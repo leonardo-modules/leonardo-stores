@@ -1,1 +1,1 @@
--e git+https://github.com/django-oscar/django-oscar-stores.git@81de665#egg=stores
+-e git+https://github.com/django-oscar/django-oscar-stores.git@81de665#egg=django_oscar_stores
